@@ -1,15 +1,25 @@
 import React from 'react';
-import Navbar from './components/Navbar';
+import Navbar from './components/navbar';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import './styles/globals.scss'
+import Home from './pages/home';
+
 
 function App() {
   return (
-    <div>
-      <Navbar />
-      <div style={{ padding: '20px' }}>
-        <h1>Welcome to My Responsive Website</h1>
-        <p>This is the main content area of your application.</p>
+    <Router>
+      <div>
+        <Navbar /> {/* 頁首部分會固定在所有頁面上 */}
+        
+        {/* 動態切換頁面內容 */}
+        <Routes>
+          <Route path="/" element={<Home />} />
+
+        </Routes>
+{/* 
+        <Footer /> 頁尾部分會固定在所有頁面上 */}
       </div>
-    </div>
+    </Router>
   );
 }
 
