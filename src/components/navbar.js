@@ -3,6 +3,7 @@ import { AppBar, Toolbar, IconButton, Typography, Button, Drawer, List, ListItem
 import MenuIcon from '@mui/icons-material/Menu';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
+import imageUrl from '../assets/90952.webp';
 
 const Navbar = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -18,33 +19,34 @@ const Navbar = () => {
 
 
 
-  const menuItems = ['Home', 'About', 'Services', 'Contact'];
+  const menuItems = ['Home', 'TODOLIST', 'MAP'];
 
   return (
     <div>
-      <AppBar component="nav" ref={appBarRef}>
-        <Toolbar>
+      <AppBar component="nav" >
+        <Toolbar sx={{backgroundColor:"purple"}}>
           {isMobile ? (
             <>
               <IconButton edge="start" color="inherit" aria-label="menu" onClick={toggleDrawer(true)}>
                 <MenuIcon />
               </IconButton>
-              <Typography variant="h6" style={{ flexGrow: 1 }}>
-                My Website
+              <Typography variant="h6" style={{ flexGrow: 1 }}  >
+                緋紅薔薇
               </Typography>
             </>
           ) : (
             <Grid2 container alignItems="center" justifyContent="space-between" size={12}>
               <Grid2 item xs={3}>
-                <Typography variant="h6">
-                  My Website
+                <Typography variant="h6" sx={{fontWeight: 'bold',color:'white',fontSize:'26px',textShadow:'3px 3px 3px black'}}>
+                緋紅薔薇
                 </Typography>
               </Grid2>
               <Grid2 item xs={6}>
                 <Grid2 container justifyContent="center" spacing={2}>
                   {menuItems.map((item, index) => (
                     <Grid2 item key={index}>
-                      <Button color="inherit">{item}</Button>
+                      <Button color="inherit" sx={{border:'5px solid silver',backgroundColor:'red',marginInline:'2.5px',paddingInline:'20px',borderRadius:'10px',textShadow:'2px 0px 1px black',
+                        '&:hover':{backgroundColor:'violet',color:'gold',border:'5px solid gold'}}} >{item}</Button>
                     </Grid2>
                   ))}
                 </Grid2>
