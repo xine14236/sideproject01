@@ -4,14 +4,16 @@ import MenuIcon from '@mui/icons-material/Menu';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
 import imageUrl from '../assets/90952.webp';
+import {  useAuth } from '../hooks/use-auth'
+import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
-
+  const navigate = useNavigate();
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
   const appBarRef = useRef(null); // 創建一個ref來獲取AppBar的元素
-
+  const { auth, setAuth, handleLogin, handleLogout } = useAuth()
   const toggleDrawer = (open) => (event) => {
     setDrawerOpen(open);
   };
@@ -19,7 +21,7 @@ const Navbar = () => {
 
 
 
-  const menuItems = ['Home', 'TODOLIST', 'MAP'];
+  const menuItems = ['home', 'todolist', 'map'];
 
   return (
     <div>
@@ -46,13 +48,19 @@ const Navbar = () => {
                   {menuItems.map((item, index) => (
                     <Grid2 item key={index}>
                       <Button color="inherit" sx={{border:'5px solid silver',backgroundColor:'red',marginInline:'2.5px',paddingInline:'20px',borderRadius:'10px',textShadow:'2px 0px 1px black',
-                        '&:hover':{backgroundColor:'violet',color:'gold',border:'5px solid gold'}}} >{item}</Button>
+                        '&:hover':{backgroundColor:'violet',color:'gold',border:'5px solid gold'}}} onClick={() => navigate(`/${item}`)} >{item}</Button>
                     </Grid2>
                   ))}
                 </Grid2>
               </Grid2>
               <Grid2 item xs={3}>
-                <Button color="inherit">Login</Button>
+                {
+                  !auth.isAuth?   (           <Button color="inherit"  onClick={() => navigate('/login')}>Login</Button>): (  <><Box sx={{width:'100%',textAlign:'center'}}>您好{auth. userData.name}</Box>
+                    <Button color="inherit" sx={{paddingLeft:{xs:'0',sm:'15px'}}} onClick={handleLogout}>Logout</Button></>    )
+                }
+   
+                
+         
               </Grid2>
             </Grid2>
           )}

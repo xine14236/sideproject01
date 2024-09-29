@@ -11,6 +11,17 @@ section{
     background-color: #e551a2;
 }
 @media (max-width:768px) {
+    body{
+        padding-top: 56px;
+    }
+    section{
+        margin-inline: 0;
+    }
+}
+@media (max-width:600px) {
+    body{
+        padding-top: 40px;
+    }
     section{
         margin-inline: 0;
     }
