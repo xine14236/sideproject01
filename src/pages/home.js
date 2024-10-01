@@ -41,6 +41,7 @@ const StyledBox = styled.div`
   padding: 20px;
   width: max-content;
   margin-inline: auto;
+  margin-bottom: 20px;
   border-radius: 15px;  /* 主元素的圓角 */
   overflow: hidden;
   font-size:36px;
