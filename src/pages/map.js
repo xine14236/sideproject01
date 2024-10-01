@@ -112,9 +112,9 @@ const MyMap = () => {
 
   return (
     <Grid2 container spacing={0}>
-        <Typography variant="h6" color="red" sx={{position:'absolute', top:'13%',left:'45%',zIndex:'1000',fontWeight:'900'}}>點擊右鍵進行標點</Typography>
+        <Typography variant="h6" color="red" sx={{position:'absolute', top:{xs:'10%',md:'12%'},left:'30%',zIndex:'1000',fontWeight:'900'}}>點擊右鍵(Mobile長按)進行標點</Typography>
        
-      <MapContainer center={[22.995575647879928, 120.222377453246]} zoom={13} style={{ height: '500px', width: '100%' }}>
+      <MapContainer center={[22.995575647879928, 120.222377453246]} zoom={13} style={{ height: '88vh', width: '100%' }}>
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
