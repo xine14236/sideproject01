@@ -108,48 +108,49 @@ const Home = () => {
             肯定自我，一般來說，如果仔細思考未來，會發現其中蘊含的深遠意義。
           </Typography>
           <Grid2
-            container
-            spacing={0}
-            sx={{
-              position: "absolute",
-              top: { xs: "400px", sm: "350px", md: "300px" },
-              left: { xs: "20px", sm: "30px", md: "50px" },
-            }}
-          >
-            <Button
-              variant="text"
-        
-              sx={{
-                color:'white',
-                border:'5px solid brown',
-                borderRadius:'15px',
-                backgroundColor: " #201104",
-                minWidth: "200px",
-                fontweight: "900",
-                fontSize: { xs: "16px", md: "18px" },
-              }}
-            >
-              了解更多
-            </Button>
-            <Button
-              variant="text"
-              
-              sx={{
-                color:'white',
-                border:'5px solid #e551a2',
-                borderRadius:'15px',
-                backgroundColor: " #201104",
-                
-                minWidth: "200px",
-                marginLeft: { xs: "10px", sm: "40px" },
-               
-                fontweight: "900",
-                fontSize: { xs: "16px", md: "18px" },
-              }}
-            >
-              深入了解
-            </Button>
-          </Grid2>
+  container
+  spacing={2} // 调整 spacing 确保元素间距
+  sx={{
+    position: "absolute",
+    top: { xs: "400px", sm: "350px", md: "300px" },
+    left: { xs: "20px", sm: "30px", md: "50px" },
+  }}
+>
+  <Grid2 xs={6} sm={4} md={3}> {/* 设置按钮的栅格宽度 */}
+    <Button
+      variant="text"
+      sx={{
+        color: 'white',
+        border: '5px solid brown',
+        borderRadius: '15px',
+        backgroundColor: "#201104",
+        minWidth: "200px",
+        fontWeight: "900",
+        fontSize: { xs: "16px", md: "18px" },
+      }}
+    >
+      了解更多
+    </Button>
+  </Grid2>
+  <Grid2 xs={6} sm={4} md={3}> {/* 第二个按钮也设置栅格宽度 */}
+    <Button
+      variant="text"
+      sx={{
+        color: 'white',
+        border: '5px solid #e551a2',
+        borderRadius: '15px',
+        backgroundColor: "#201104",
+        minWidth: "200px",
+        marginLeft: { xs: "10px", sm: "40px" },
+        fontWeight: "900",
+        fontSize: { xs: "16px", md: "18px" },
+      }}
+    >
+      深入了解
+    </Button>
+  </Grid2>
+</Grid2>
+
         </BackgroundDiv>
       </Grid2>
       <section>

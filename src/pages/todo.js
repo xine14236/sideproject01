@@ -226,6 +226,7 @@ const ToDoList = () => {
               value={newTodo}
               onChange={(e) => setNewTodo(e.target.value)}
               fullWidth
+              sx={{ mt: 2 }}
             />
             <Button variant="contained" sx={{ mt: 2 }} onClick={handleSubmit}>
               新增
@@ -253,6 +254,7 @@ const ToDoList = () => {
               value={editText}
               onChange={(e) => setEditText(e.target.value)}
               fullWidth
+              sx={{ mt: 2 }}
             />
             <Button variant="contained" sx={{ mt: 2 }} onClick={handleUpdate}>
               更新
