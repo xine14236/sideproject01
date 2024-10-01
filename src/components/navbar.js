@@ -78,17 +78,36 @@ const Navbar = () => {
           style={{ width: '250px' }}
         >
           <Box style={{ padding: '16px', textAlign: 'center', borderBottom: '1px solid #ddd' }}>
-            <Button variant="contained" color="primary">
-              Login
-            </Button>
+          {
+                  !auth.isAuth?   (           <Button variant="contained" sx={{backgroundColor:'purple'}} onClick={() => navigate('/login')}>
+                    Login
+                  </Button>): (  <><Box sx={{width:'100%',textAlign:'center'}}>您好{auth. userData.name}</Box>
+                    <Button variant="contained" sx={{backgroundColor:'purple'}} onClick={handleLogout}>
+              Logout
+            </Button></>    )
+                }
+            
+            
+            
           </Box>
           <List>
-            {menuItems.map((item, index) => (
-              <ListItem button key={index}>
-                <ListItemText primary={item} />
-              </ListItem>
-            ))}
-          </List>
+      {menuItems.map((item, index) => (
+        <ListItem
+        onClick={() => navigate(`/${item}`)}
+          button
+          key={index}
+          sx={{
+            '&:hover': {
+              backgroundColor: 'purple',
+            cursor:'pointer',
+            color:'gold'
+            },
+          }}
+        >
+          <ListItemText primary={item} />
+        </ListItem>
+      ))}
+    </List>
         </Box>
       </Drawer>
     </div>

@@ -33,6 +33,10 @@ const BackgroundDiv = styled.div`
   width: 100%;
   height: 100vh;
   position: relative;
+   
+  @media (max-width: 476px) {
+    height: 60vh;
+  }
 `;
 const StyledBox = styled.div`
   position: relative;
