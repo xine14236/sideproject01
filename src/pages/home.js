@@ -35,7 +35,7 @@ const BackgroundDiv = styled.div`
   position: relative;
    
   @media (max-width: 476px) {
-    height: 60vh;
+    height: 65vh;
   }
 `;
 const StyledBox = styled.div`
@@ -127,6 +127,9 @@ const Home = () => {
         minWidth: "200px",
         fontWeight: "900",
         fontSize: { xs: "16px", md: "18px" },
+        '@media (max-width: 476px)': {
+          minWidth: "150px",
+    },
       }}
     >
       了解更多
@@ -144,6 +147,9 @@ const Home = () => {
         marginLeft: { xs: "10px", sm: "40px" },
         fontWeight: "900",
         fontSize: { xs: "16px", md: "18px" },
+        '@media (max-width: 476px)': {
+          minWidth: "150px",
+    },
       }}
     >
       深入了解
